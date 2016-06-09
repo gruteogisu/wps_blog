@@ -11,8 +11,6 @@ django의 기본적인 기능을 학습하고 이를 응용하여 간단한 서�
 
 ## 설치할 패키지
 
-1. 일단 `Django` 를 설치하세요.
-
 ```
-$ pip install django
+$ ./python_packages.sh
 ```
