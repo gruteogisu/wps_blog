@@ -13,7 +13,15 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            "post:detail",
+            "posts:detail",
+            kwargs={
+                "post_id": self.id,
+            }
+        )
+
+    def get_update_url(self):
+        return reverse(
+            "posts:update",
             kwargs={
                 "post_id": self.id,
             }
@@ -33,4 +41,4 @@ class NaverPost(models.Model):
     original_url = models.URLField()
 
     def __str__(self):
-        return self.titl
+        return self.title
