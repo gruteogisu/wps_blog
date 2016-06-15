@@ -3,8 +3,6 @@ from django.core.urlresolvers import reverse
 
 from django.views.generic import View
 
-from hashids import Hashids
-
 
 class BitlinkCreateView(View):
 
@@ -21,9 +19,5 @@ class BitlinkCreateView(View):
         bitlink = request.user.bitlink_set.create(
             original_url=original_url,
         )
-
-        hashids = Hashids(salt="awesome bitlink", min_length=4)
-        bitlink.shorten_hash = hashids.encode(bitlink.id)
-        bitlink.save()
 
         return redirect(reverse("home"))
